@@ -1,6 +1,9 @@
+# use module in class
+require_relative '../crud'
+
 class Student
-	# attr_accessor :first_name, :last_name, :email, :username
-	# attr_reader :password
+	attr_accessor :first_name, :last_name, :email, :username, :password
+	include Crud
 
 	@first_name
 	@last_name
@@ -24,4 +27,4 @@ class Student
 end
 
 quang = Student.new("Nguyen", "Quang", "quang-nguyen", "quang.ng193", "123456")
-puts quang
+puts quang.create_hash_digest(quang.password)
